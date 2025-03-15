@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chugg.com - Train Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>Chugg<span>.com</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">My Bookings</a></li>
+                    <li><a href="#">Trains</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2>Book Your Train Journey</h2>
+            <p>Fast, Reliable, and Hassle-free Train Ticket Booking</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="booking-card">
+            <div class="booking-header">
+                <h2>Search Trains</h2>
+                <p>Find the best trains for your journey</p>
+            </div>
+
+            <form id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fromCity">From:</label>
+                        <select id="fromCity" required>
+                            <option value="Trivandrum">Trivandrum</option>
+                            <option value="Chennai" selected>Chennai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Guwahati">Guwahati</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="toCity">To:</label>
+                        <select id="toCity" required>
+                            <option value="Trivandrum">Trivandrum</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi" selected>Delhi</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Guwahati">Guwahati</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="journeyDate">Date of Journey:</label>
+                        <input type="date" id="journeyDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="trainClass">Class:</label>
+                        <select id="trainClass" required>
+                            <option value="First Class - Air Conditioned">First Class - Air Conditioned</option>
+                            <option value="Second Class - Air Conditioned">Second Class - Air Conditioned</option>
+                            <option value="Third Class - Non AC">Third Class - Non AC</option>
+                            <option value="Unreserved">Unreserved</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="returnJourney" onclick="toggleReturnDate()">
+                        <label for="returnJourney">Return Journey</label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="tatkal">
+                        <label for="tatkal">Tatkal Booking</label>
+                    </div>
+                </div>
+
+                <div class="form-row" id="returnDateContainer" style="display:none;">
+                    <div class="form-group">
+                        <label for="returnDate">Return Date:</label>
+                        <input type="date" id="returnDate">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="numPassengers">Number of Passengers:</label>
+                        <input type="number" id="numPassengers" min="1" max="10" value="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="passengerName">Primary Passenger Name:</label>
+                        <input type="text" id="passengerName" placeholder="As per ID proof" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="For e-ticket & updates" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="tel" id="mobile" placeholder="10-digit mobile number" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="confirmation">Send Confirmation To:</label>
+                        <select id="confirmation" required>
+                            <option value="email">Email</option>
+                            <option value="sms">SMS</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="discountCategory">Discount Category:</label>
+                        <select id="discountCategory">
+                            <option value="none">None</option>
+                            <option value="disabled">Disabled Person</option>
+                            <option value="pregnant">Pregnant Woman</option>
+                            <option value="ex-service">Ex-Service Man</option>
+                            <option value="army">Army Officer</option>
+                            <option value="elder">Elder (60+)</option>
+                            <option value="research">Research Student</option>
+                            <option value="school-college">School/College Student</option>
+                            <option value="gov-employee">Government Employee</option>
+                            <option value="national-sport">National Level Sports Player</option>
+                            <option value="international-sport">International Level Sports Player</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pricing-section">
+                    <button type="button" class="btn btn-secondary" onclick="calculateTotal()">Calculate Fare</button>
+                    <div id="totalPrice"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" onclick="resetForm()">Reset</button>
+                    <button type="submit" class="btn btn-primary">Search Trains</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="train-info-section">
+            <div class="train-info-card">
+                <h3>Train Types</h3>
+                <div class="train-types">
+                    <div class="train-type">
+                        <div class="train-icon express"></div>
+                        <div class="train-type-details">
+                            <h4>Express</h4>
+                            <p>Speed: 200 km/hr</p>
+                            <p>Standard fare</p>
+                        </div>
+                    </div>
+                    <div class="train-type">
+                        <div class="train-icon superfast"></div>
+                        <div class="train-type-details">
+                            <h4>Super Fast Express</h4>
+                            <p>Speed: 250 km/hr</p>
+                            <p>Additional fare: ₹500</p>
+                        </div>
+                    </div>
+                    <div class="train-type">
+                        <div class="train-icon bullet"></div>
+                        <div class="train-type-details">
+                            <h4>Bullet Train</h4>
+                            <p>Speed: 450 km/hr</p>
+                            <p>Additional fare: ₹2000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Chugg.com</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">Train Routes</a></li>
+                    <li><a href="#">PNR Status</a></li>
+                    <li><a href="#">Live Train Status</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Chugg.com All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

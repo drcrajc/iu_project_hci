@@ -1,0 +1,684 @@
+/* Enhanced Styles for Chugg.com Train Booking App */
+
+:root {
+    --primary: #007bff;
+    --primary-dark: #0056b3;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --danger: #dc3545;
+    --warning: #ffc107;
+    --info: #17a2b8;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --white: #ffffff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.main-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.logo span {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 992px) {
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Booking Card Styles */
+.booking-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-header {
+    margin-bottom: 25px;
+}
+
+.booking-header h2 {
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.booking-header p {
+    color: var(--gray);
+}
+
+/* Form Styles */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--dark);
+}
+
+.btn-outline:hover {
+    background-color: var(--light);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    min-width: 120px;
+}
+
+/* Pricing Section */
+.pricing-section {
+    margin: 20px 0;
+}
+
+#totalPrice {
+    margin-top: 15px;
+}
+
+/* Train Info Section */
+.train-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.train-info-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.train-info-card h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.train-types {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.train-type {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--light);
+}
+
+.train-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.train-icon.express {
+    background-color: #4A90E2;
+}
+
+.train-icon.superfast {
+    background-color: #50AF95;
+}
+
+.train-icon.bullet {
+    background-color: #F25C54;
+}
+
+.train-icon::before {
+    content: "🚆";
+    font-size: 24px;
+}
+
+.train-type-details h4 {
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.train-type-details p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-top: 1px solid #444;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Train Options Display */
+.train-options-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.train-options-container h2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.train-options-container p {
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.train-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.train-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.train-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.train-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.train-name h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.train-name p {
+    margin: 5px 0 0;
+    color: var(--gray);
+    font-size: 14px;
+    text-align: left;
+}
+
+.train-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.train-time {
+    text-align: center;
+    width: 25%;
+}
+
+.train-time h4 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--dark);
+}
+
+.train-time p {
+    margin: 5px 0 0;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.train-duration {
+    text-align: center;
+    width: 50%;
+    position: relative;
+}
+
+.train-duration p {
+    margin: 0 0 10px;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.duration-line {
+    height: 2px;
+    background-color: var(--border-color);
+    position: relative;
+}
+
+.duration-line:before, .duration-line:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    top: -2px;
+}
+
+.duration-line:before {
+    left: 0;
+}
+
+.duration-line:after {
+    right: 0;
+}
+
+.train-classes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.train-classes p {
+    margin: 0;
+    text-align: right;
+    color: var(--gray-dark);
+    font-weight: 500;
+}
+
+.select-train-btn {
+    background-color: var(--success);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-train-btn:hover {
+    background-color: #218838;
+}
+
+/* Ticket Confirmation Styles */
+.confirmation-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.confirmation-container h2 {
+    color: var(--success);
+    margin-bottom: 20px;
+}
+
+.ticket {
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0 30px;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.ticket-header h3 {
+    color: var(--primary);
+    margin: 0 0 10px;
+}
+
+.ticket-header p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.ticket-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.ticket-details p strong {
+    color: var(--dark);
+    width: 120px;
+    display: inline-block;
+}
+
+.ticket-footer {
+    border-top: 1px dashed var(--border-color);
+    padding-top: 15px;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.ticket-footer p {
+    margin: 5px 0;
+}
+
+/* Fare Breakdown Styles */
+.fare-breakdown {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: var(--light);
+}
+
+.fare-breakdown h3 {
+    margin-top: 0;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.fare-breakdown p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.fare-breakdown hr {
+    border: none;
+    border-top: 1px dashed var(--border-color);
+    margin: 15px 0;
+}
+
+.fare-breakdown .total {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+    
+    .train-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .train-time, .train-duration {
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+}
